@@ -28,7 +28,6 @@ class ContinuousResidualVAE(nn.Module):
             super().__init__()
 
             self.fc = spectral_norm(nn.Linear(in_dim, out_dim), n_power_iterations=5)
-            self.fc = nn.Linear(in_dim, out_dim)
             self.bn = nn.BatchNorm1d(out_dim)
             self.swish = swish
 
